@@ -5,3 +5,5 @@ report/
 .npmignore
 __tests__
 __mocks__
+output/
+examples/
