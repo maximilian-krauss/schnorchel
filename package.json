@@ -1,6 +1,6 @@
 {
   "name": "schnorchel",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The missing schema generator for rabbitmq ",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,9 @@
   "bugs": {
     "url": "https://github.com/maximilian-krauss/schnorchel/issues"
   },
-  "bin" : { "schnorchel" : "./index.js" },
+  "bin": {
+    "schnorchel": "./index.js"
+  },
   "homepage": "https://github.com/maximilian-krauss/schnorchel#readme",
   "dependencies": {
     "amqplib": "^0.7.1",
