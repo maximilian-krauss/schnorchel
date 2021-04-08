@@ -19,6 +19,7 @@ const exampleSchema = {
   }
 }
 const exampleConfig = {
+  logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn(), debug: jest.fn() },
   rabbitMq: {
     exchangeName: 'snorkel'
   },
