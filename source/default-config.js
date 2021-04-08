@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   // Required, uses the same interfaces which is exposed by `console`
   logger: undefined,
 

@@ -1,8 +1,9 @@
-import path from 'path'
-import fs from 'fs'
+const path = require('path')
+const fs = require('fs')
 
-export async function writeToOutputDirectory (schemaName, schema, config) {
+async function writeToOutputDirectory (schemaName, schema, config) {
   const {
+    logger,
     output: {
       directory,
       schemaSerializer,
@@ -20,4 +21,10 @@ export async function writeToOutputDirectory (schemaName, schema, config) {
     serializedSchema,
     { encoding: 'utf8' }
   )
+
+  logger.info('Schema saved to disk', { filename, destinationDirectory })
+}
+
+module.exports = {
+  writeToOutputDirectory
 }

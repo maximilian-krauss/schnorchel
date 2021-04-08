@@ -1,9 +1,9 @@
-import { connect } from 'amqplib'
-import { ok } from 'assert'
+const { connect } = require('amqplib')
+const { ok } = require('assert')
 
 const logger = console
 
-export async function connectToRabbitMq ({ uri, exchangeName, exchangeType, routingKey, queueName = undefined }, processMessageFn) {
+async function connectToRabbitMq ({ uri, exchangeName, exchangeType, routingKey, queueName = undefined }, processMessageFn) {
   ok(uri)
   ok(processMessageFn)
   ok(exchangeName)
@@ -32,4 +32,8 @@ export async function connectToRabbitMq ({ uri, exchangeName, exchangeType, rout
       await connection.close()
     }
   }
+}
+
+module.exports = {
+  connectToRabbitMq
 }

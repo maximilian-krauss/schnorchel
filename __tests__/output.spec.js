@@ -1,12 +1,10 @@
 /// <reference types="jest" />
-/* eslint-disable import/first */
-
 jest.mock('path')
 jest.mock('fs')
 
-import { writeToOutputDirectory } from './../source/output.js'
-import fs from 'fs'
-import path from 'path'
+const { writeToOutputDirectory } = require('./../source/output')
+const fs = require('fs')
+const path = require('path')
 
 const exampleSchema = {
   $schema: 'http://json-schema.org/draft-04/schema#',

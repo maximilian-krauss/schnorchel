@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const { startListening } = require('./../index.js')
+const { resolve } = require('path')
+const { ok } = require('assert')
+
+async function startApplication () {
+  const [,, pathToConfig] = process.argv
+  ok(pathToConfig, 'Path to config needs to be specified')
+
+  const resolvedPath = resolve(pathToConfig)
+  await startListening(resolvedPath)
+}
+
+startApplication()
+  .catch(error => {
+    console.error(error)
+    process.exit(1)
+  })

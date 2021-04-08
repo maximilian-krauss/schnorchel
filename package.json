@@ -11,7 +11,6 @@
     "type": "git",
     "url": "git+https://github.com/maximilian-krauss/schnorchel.git"
   },
-  "type": "module",
   "keywords": [
     "node.js",
     "rabbitmq",
@@ -25,7 +24,7 @@
     "url": "https://github.com/maximilian-krauss/schnorchel/issues"
   },
   "bin": {
-    "schnorchel": "./index.js"
+    "schnorchel": "./bin/schnorchel"
   },
   "homepage": "https://github.com/maximilian-krauss/schnorchel#readme",
   "dependencies": {
@@ -35,20 +34,15 @@
     "ms": "^2.0.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.13.12",
     "@types/jest": "^26.0.22",
     "babel-jest": "^26.6.3",
     "jest": "^26.6.3",
     "prettier": "^2.2.1",
-    "regenerator-runtime": "^0.13.7",
     "standard": "^16.0.3"
   },
   "standard": {
     "env": [
       "jest"
     ]
-  },
-  "transform": {
-    "^.+\\.jsx?$": "babel-jest"
   }
 }

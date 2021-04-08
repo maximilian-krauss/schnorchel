@@ -1,13 +1,11 @@
-import merge from 'lodash.merge'
-import toMS from 'ms'
-import { ok } from 'assert'
-import { resolve } from 'path'
-import GenerateSchema from 'generate-schema'
+const merge = require('lodash.merge')
+const toMS = require('ms')
+const GenerateSchema = require('generate-schema')
 
-import { connectToRabbitMq } from './source/rabbit.js'
-import defaultConfig from './source/default-config.js'
-import { sleep } from './source/helper.js'
-import { writeToOutputDirectory } from './source/output.js'
+const { connectToRabbitMq } = require('./source/rabbit.js')
+const defaultConfig = require('./source/default-config.js')
+const { sleep } = require('./source/helper.js')
+const { writeToOutputDirectory } = require('./source/output.js')
 
 function addSampleToCollection (sample, schemaName, collection, { numberOfSamplesPerSchema }) {
   if (!collection[schemaName]) {
@@ -23,8 +21,8 @@ function samplesToSchema (schemaName, samples) {
   return GenerateSchema.json(schemaName, samples)
 }
 
-export async function startListening (pathToConfig) {
-  const { default: overwrites } = await import(pathToConfig)
+async function startListening (pathToConfig) {
+  const overwrites = require(pathToConfig)
   const config = merge({}, defaultConfig, overwrites)
   const collectedSchemas = {}
 
@@ -49,16 +47,6 @@ export async function startListening (pathToConfig) {
   }
 }
 
-export async function startApplication () {
-  const [,, pathToConfig] = process.argv
-  ok(pathToConfig, 'Path to config needs to be specified')
-
-  const resolvedPath = resolve(pathToConfig)
-  await startListening(resolvedPath)
+module.exports = {
+  startListening
 }
-
-startApplication()
-  .catch(error => {
-    console.error(error)
-    process.exit(1)
-  })
