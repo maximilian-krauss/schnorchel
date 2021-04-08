@@ -1,0 +1,7 @@
+.env
+.npmrc
+.gitlab-ci.yml
+report/
+.npmignore
+__tests__
+__mocks__

@@ -1,0 +1,51 @@
+{
+  "name": "schnorchel",
+  "version": "0.0.1",
+  "description": "The missing schema generator for rabbitmq ",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximilian-krauss/schnorchel.git"
+  },
+  "type": "module",
+  "keywords": [
+    "node.js",
+    "rabbitmq",
+    "schema",
+    "json",
+    "jsonschema"
+  ],
+  "author": "Maximilian Krauß",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maximilian-krauss/schnorchel/issues"
+  },
+  "homepage": "https://github.com/maximilian-krauss/schnorchel#readme",
+  "dependencies": {
+    "amqplib": "^0.7.1",
+    "generate-schema": "^2.6.0",
+    "lodash.merge": "^4.6.2",
+    "ms": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.13.12",
+    "@types/jest": "^26.0.22",
+    "babel-jest": "^26.6.3",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "regenerator-runtime": "^0.13.7",
+    "standard": "^16.0.3"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "transform": {
+    "^.+\\.jsx?$": "babel-jest"
+  }
+}
