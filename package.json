@@ -1,15 +1,16 @@
 {
   "name": "schnorchel",
-  "version": "0.0.3",
+  "version": "0.0.0-development",
   "description": "The missing schema generator for rabbitmq ",
   "main": "index.js",
   "scripts": {
     "lint": "standard",
-    "test": "jest"
+    "test": "jest",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maximilian-krauss/schnorchel.git"
+    "url": "https://github.com/maximilian-krauss/schnorchel.git"
   },
   "keywords": [
     "node.js",
@@ -38,7 +39,8 @@
     "babel-jest": "^26.6.3",
     "jest": "^26.6.3",
     "prettier": "^2.2.1",
-    "standard": "^16.0.3"
+    "standard": "^16.0.3",
+    "semantic-release": "^17.4.2"
   },
   "standard": {
     "env": [
