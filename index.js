@@ -18,7 +18,13 @@ function addSampleToCollection (sample, schemaName, collection, { numberOfSample
 }
 
 function samplesToSchema (schemaName, samples) {
-  return GenerateSchema.json(schemaName, samples)
+  // since we provide a set of samples, the output is also a set,
+  // but the desired result is a simple object. That's why the mapping is happening here
+  const { $schema, items } = GenerateSchema.json(schemaName, samples)
+  return {
+    $schema,
+    ...items
+  }
 }
 
 async function startListening (pathToConfig) {
