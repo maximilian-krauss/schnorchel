@@ -6,6 +6,7 @@ const { connectToRabbitMq } = require('./source/rabbit.js')
 const defaultConfig = require('./source/default-config.js')
 const { sleep } = require('./source/helper.js')
 const { writeToOutputDirectory } = require('./source/output.js')
+const { sortByKey } = require('./source/object-sort')
 
 function addSampleToCollection (sample, schemaName, collection, { numberOfSamplesPerSchema }) {
   if (!collection[schemaName]) {
@@ -21,10 +22,11 @@ function samplesToSchema (schemaName, samples) {
   // since we provide a set of samples, the output is also a set,
   // but the desired result is a simple object. That's why the mapping is happening here
   const { $schema, items } = GenerateSchema.json(schemaName, samples)
-  return {
+  const schema = {
     $schema,
     ...items
   }
+  return sortByKey(schema)
 }
 
 async function startListening (pathToConfig) {
