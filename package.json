@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/maximilian-krauss/schnorchel#readme",
   "dependencies": {
-    "amqplib": "^0.8.0",
+    "amqplib": "^0.10.1",
     "generate-schema": "^2.6.0",
     "lodash.merge": "^4.6.2",
     "ms": "^2.0.0"
